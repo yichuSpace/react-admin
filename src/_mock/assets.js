@@ -87,34 +87,34 @@ const MANAGEMENT_PERMISSION = {
   route: 'management',
   order: 2,
   children: [
-    {
-      id: '2781684678535711',
-      parentId: '0901673425580518',
-      label: 'sys.menu.user.index',
-      name: 'User',
-      type: PermissionType.CATALOGUE,
-      route: 'user',
-      children: [
-        {
-          id: '4754063958766648',
-          parentId: '2781684678535711',
-          label: 'sys.menu.user.profile',
-          name: 'Profile',
-          type: PermissionType.MENU,
-          route: 'profile',
-          component: '/management/user/profile/index.tsx',
-        },
-        {
-          id: '2516598794787938',
-          parentId: '2781684678535711',
-          label: 'sys.menu.user.account',
-          name: 'Account',
-          type: PermissionType.MENU,
-          route: 'account',
-          component: '/management/user/account/index.tsx',
-        },
-      ],
-    },
+    // {
+    //   id: '2781684678535711',
+    //   parentId: '0901673425580518',
+    //   label: 'sys.menu.user.index',
+    //   name: 'User',
+    //   type: PermissionType.CATALOGUE,
+    //   route: 'user',
+    //   children: [
+    //     {
+    //       id: '4754063958766648',
+    //       parentId: '2781684678535711',
+    //       label: 'sys.menu.user.profile',
+    //       name: 'Profile',
+    //       type: PermissionType.MENU,
+    //       route: 'profile',
+    //       component: '/management/user/profile/index.tsx',
+    //     },
+    //     {
+    //       id: '2516598794787938',
+    //       parentId: '2781684678535711',
+    //       label: 'sys.menu.user.account',
+    //       name: 'Account',
+    //       type: PermissionType.MENU,
+    //       route: 'account',
+    //       component: '/management/user/account/index.tsx',
+    //     },
+    //   ],
+    // },
     {
       id: '0249937641030250',
       parentId: '0901673425580518',
@@ -494,7 +494,7 @@ const EVALUATION_FEEDBACK_PERMISSION = {
 };
 export const PERMISSION_LIST = [
   DASHBOARD_PERMISSION,
-  // MANAGEMENT_PERMISSION,
+  MANAGEMENT_PERMISSION,
   // COMPONENTS_PERMISSION,
   // FUNCTIONS_PERMISSION,
   // MENU_LEVEL_PERMISSION,

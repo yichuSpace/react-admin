@@ -86,10 +86,10 @@
       "workbench": "工作台",
       "analysis": "分析",
       "management": "管理",
-      "evaluation":{
-        "evaluationFeedback":"评价反馈",
-        "evaluationIndexLibrary":"评价库",
-        "indicatorChangeApplication":"指标变更申请"
+      "evaluation": {
+        "evaluationFeedback": "评价反馈",
+        "evaluationIndexLibrary": "评价指标库管理",
+        "indicatorChangeApplication": "指标变更申请"
       },
       "user": {
         "index": "用户",

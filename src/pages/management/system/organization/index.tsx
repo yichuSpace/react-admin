@@ -21,8 +21,6 @@ import orgService from '@/api/services/orgService';
 import { IconButton, Iconify } from '@/components/icon';
 import ProTag from '@/theme/antd/components/tag';
 
-import OrganizationChart from './organization-chart';
-
 import { Organization } from '#/entity';
 
 type SearchFormFieldType = Pick<Organization, 'name' | 'status'>;
@@ -95,7 +93,7 @@ export default function OrganizationPage() {
     queryKey: ['orgs'],
     queryFn: orgService.getOrgList,
   });
-
+  console.log(data);
   const onSearchFormReset = () => {
     searchForm.resetFields();
   };
@@ -177,10 +175,10 @@ export default function OrganizationPage() {
           rowSelection={{ ...rowSelection }}
         />
       </Card>
-
+      {/* 
       <Card title="Organization Chart">
         <OrganizationChart organizations={data} />
-      </Card>
+      </Card> */}
 
       <OrganizationModal {...organizationModalPros} />
     </Space>
