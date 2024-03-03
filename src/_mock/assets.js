@@ -488,6 +488,17 @@ const EVALUATION_FEEDBACK_PERMISSION = {
           component:
             '/evaluation-feedback/evaluationIndexLibrary/indicatorChangeApplication/index.tsx',
         },
+        {
+          id: '2781684678535711',
+          parentId: '8557056851997155',
+          label: 'sys.menu.evaluation.indicatorChangeApplication',
+          name: 'indicatorChangeApplicationDetail',
+          type: PermissionType.MENU,
+          route: 'indicatorChangeApplicationDetail',
+          hide: true,
+          component:
+            '/evaluation-feedback/evaluationIndexLibrary/indicatorChangeApplication/detail.tsx',
+        },
       ],
     },
   ],

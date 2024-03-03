@@ -9,7 +9,10 @@ import { AppRouteObject } from '#/router';
 const IndicatorChangeApplicationPage = lazy(
   () => import('@/pages/evaluation-feedback/evaluationIndexLibrary/indicatorChangeApplication'),
 );
-
+const IndicatorChangeApplicationDetail = lazy(
+  () =>
+    import('@/pages/evaluation-feedback/evaluationIndexLibrary/indicatorChangeApplication/detail'),
+);
 const management: AppRouteObject = {
   order: 7,
   path: 'evaluation-feedback',
@@ -45,6 +48,16 @@ const management: AppRouteObject = {
           meta: {
             label: 'sys.menu.user.indicatorChangeApplication',
             key: '/management/evaluationIndexLibrary/indicatorChangeApplication',
+            disabled: true,
+          },
+        },
+        {
+          path: 'indicatorChangeApplicationDetail',
+          element: <IndicatorChangeApplicationDetail />,
+          meta: {
+            label: 'sys.menu.user.indicatorChangeApplication',
+            key: '/management/evaluationIndexLibrary/indicatorChangeApplication/detail',
+            hideMenu: false,
           },
         },
       ],

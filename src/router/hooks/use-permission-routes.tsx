@@ -22,9 +22,10 @@ function resolveComponent(path: string) {
 
 /**
  * return routes about permission
+ * 返回权限
  */
 export function usePermissionRoutes() {
-  const permissions = useUserPermission();
+  const permissions = useUserPermission(); // 用户权限
 
   return useMemo(() => {
     const flattenedPermissions = flattenTrees(permissions!);
@@ -38,6 +39,7 @@ export function usePermissionRoutes() {
 
 /**
  * transform Permission[] to  AppRouteObject[]
+ * 权限
  * @param permissions
  * @param parent
  */

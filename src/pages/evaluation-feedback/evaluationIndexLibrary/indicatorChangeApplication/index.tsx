@@ -1,12 +1,25 @@
-import { Card, Table, Form, Input, Select, DatePicker, Row, Col } from 'antd';
+import {
+  Card,
+  Table,
+  Form,
+  Input,
+  Select,
+  DatePicker,
+  Row,
+  Col,
+  Space,
+  Button,
+  Modal,
+  message,
+} from 'antd';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import SearchFormRender from '@/pages/evaluation-feedback/components/SearchFormRender';
 
-import type { PaginationProps } from 'antd';
+import type { PaginationProps, TableProps } from 'antd';
 
 const { RangePicker } = DatePicker;
-
 interface TableListDataType {
   id: number;
   a: string;
@@ -38,6 +51,8 @@ type QueryTableListParamsType = SearchFormDataType & PaginationParamsType;
 
 function IndicatorChangeApplicationPage() {
   const [searchForm] = Form.useForm();
+  const [modal, contextHolder] = Modal.useModal();
+  const navigate = useNavigate();
 
   const linkNameOptions = [
     { value: 'jack', label: 'Jack' },
@@ -45,13 +60,42 @@ function IndicatorChangeApplicationPage() {
     { value: 'Yiminghe', label: 'yiminghe' },
     { value: 'disabled', label: 'Disabled' },
   ];
-
-  const columns = [
+  const onHandleDelete = async (item: TableListDataType) => {
+    const config = {
+      title: '提示',
+      content: '确定删除吗？',
+    };
+    console.log(item);
+    const confirmResult = await modal.confirm(config);
+    if (confirmResult) {
+      console.log('object');
+      // 执行删除操作
+      message.success('删除成功');
+    } else {
+      message.error('删除失败');
+    }
+    console.log(item, confirmResult);
+  };
+  const onOpenDetail = (item: TableListDataType) => {
+    console.log(item);
+    navigate('/evaluation-feedback/evaluationIndexLibrary/indicatorChangeApplicationDetail');
+  };
+  const columns: TableProps<TableListDataType>['columns'] = [
     { title: '工作单编号', dataIndex: 'a' },
     { title: '指标名称', dataIndex: 'b' },
     { title: '指标分类', dataIndex: 'c' },
     { title: '指标标识', dataIndex: 'd' },
     { title: '指标描述', dataIndex: 'e' },
+    {
+      title: 'Action',
+      key: 'action',
+      render: (_, record) => (
+        <Space size="middle">
+          <Button onClick={() => onOpenDetail(record)}>详情</Button>
+          <Button onClick={() => onHandleDelete(record)}>删除</Button>
+        </Space>
+      ),
+    },
   ];
 
   const [tableListData, setTableListData] = useState<TableListDataType[]>([]);
@@ -193,6 +237,7 @@ function IndicatorChangeApplicationPage() {
           pageSize: paginationParams.pageSize,
         }}
       />
+      {contextHolder}
     </Card>
   );
 }
