@@ -43,8 +43,8 @@ module.exports = {
     'react',
     'react-hooks',
     'jsx-a11y',
-    'import',
-    'unused-imports',
+    // 'import',
+    // 'unused-imports',
   ],
   /**
    * 定义规则
@@ -116,11 +116,11 @@ module.exports = {
       },
     ],
 
-    'unused-imports/no-unused-imports-ts': 'warn',
-    'unused-imports/no-unused-vars-ts': [
-      'warn',
-      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
-    ],
+    // 'unused-imports/no-unused-imports-ts': 'warn',
+    // 'unused-imports/no-unused-vars-ts': [
+    //   'warn',
+    //   { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
+    // ],
 
     '@typescript-eslint/no-unused-vars': [
       'warn',
